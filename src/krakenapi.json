@@ -1,0 +1,22 @@
+{
+    "currency" : "USD",
+    "cryptos" : [{
+                    "name" : "BITCOIN",
+                    "ticker" : "XBT",
+                    "bid" : 1.0,
+                    "ask" : 2.0,
+                    "trade" : 3.0
+                }, {
+                    "name" : "LITECOIN",
+                    "ticker" : "LTC",
+                    "bid" : 4.0,
+                    "ask" : 5.0,
+                    "trade" : 6.0
+                }, {
+                    "name" : "ETHEREUM",
+                    "ticker" : "ETHUSD",
+                    "bid" : 4.0,
+                    "ask" : 5.0,
+                    "trade" : 6.0
+                }]
+}
