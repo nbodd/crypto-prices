@@ -5,7 +5,7 @@ import 'semantic-ui-css/semantic.min.css';
 import '../style.css'
 
 const CryptoBlock = ({name, bid, ask, trade, image_data}) => (
-    <Card fluid className='crypto-block'>
+    <div className='crypto-block'><Card fluid>
         <Card.Header>{name}</Card.Header>
         <Image floated='right' size='mini' src={image_data} />
         <Grid columns={3} stackable>
@@ -13,7 +13,7 @@ const CryptoBlock = ({name, bid, ask, trade, image_data}) => (
             <Grid.Column>Ask: {ask}</Grid.Column>
             <Grid.Column>Trade: {trade}</Grid.Column>
         </Grid>
-    </Card>
+    </Card></div>
 )
 
 CryptoBlock.propTypes = {

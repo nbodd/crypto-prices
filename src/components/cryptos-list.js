@@ -7,11 +7,11 @@ import 'semantic-ui-css/semantic.min.css'
 import CryptoBlock from './crypto-block'
 
 const CryptosList = ({cryptos}) => (
-    <div>
-        <Grid stretched>
-           {cryptos.map((crypto, id) => <Grid.Row stretched><CryptoBlock {...crypto} /></Grid.Row>)}
-        </Grid>
-    </div>
+    
+    <Grid stretched>
+        {cryptos.map((crypto, id) => <Grid.Row stretched><CryptoBlock {...crypto} /></Grid.Row>)}
+    </Grid>
+
 )
 
 CryptosList.propTypes = {
