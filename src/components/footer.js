@@ -4,8 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 import '../style.css'
 
 import ReactjsIcon from '../images/reactjs.png'
-import ParceljsIcon from '../images/parceljs.png'
-import BabeljsIcon from '../images/babeljs.png'
+import ReduxjsIcon from '../images/reduxjs.png'
 import SemanticuiIcon from '../images/semanticui.png'
 import KrakenLogo from '../images/kraken.png'
 
@@ -22,12 +21,10 @@ const PageFooter = () => (
             <Header as='h3' textAlign='center'>Built With</Header>
             <Grid columns={3} verticalAlign='middle' centered>
                 <Grid.Column>
-                    <Image size='tiny' src={ParceljsIcon} href="http://parceljs.org"></Image>
+                    <Image size='tiny' src={ReactjsIcon} href="http://reactjs.org"></Image>
                 </Grid.Column>
                 <Grid.Column>
-                    <Image size='tiny' src={ReactjsIcon} href="http://reactjs.org"></Image>
-                    <br />
-                    <Image size='tiny' src={BabeljsIcon} href="http://babeljs.io"></Image>
+                    <Image size='tiny' src={ReduxjsIcon} href="http://redux.js.org"></Image>
                 </Grid.Column>
                 <Grid.Column>
                     <Image size='tiny' src={SemanticuiIcon} href="http://react.semantic-ui.com"></Image>
