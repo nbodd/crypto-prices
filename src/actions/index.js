@@ -16,3 +16,12 @@ export const changeCurrency = ({currency}) => ({
     type : ACTIONS.CHANGE_CURRENCY,
     currency
 })
+
+export function fetchCurrentPrices(url, parseJsonForLatestPrices) {
+    return function(dispatch) {
+        return fetch(url)
+            .then(response => response.json(), error => console.log(error))
+            .then(data => parseJsonForLatestPrices(data))
+            .then(data => dispatch(updatePrices(data)))
+    }
+}

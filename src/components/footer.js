@@ -12,7 +12,7 @@ import KrakenLogo from '../images/kraken.png'
 
 const PageFooter = () => (
     <Grid columns={2} stackable>
-        <Grid.Column streched>
+        <Grid.Column>
             <div className='footer-card'>
                 <Header as='h3' textAlign='center'>Live Data Provided By</Header>
                 <a href='https://kraken.com'><Image size='medium' src={KrakenLogo} centered /></a>

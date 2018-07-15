@@ -5,7 +5,12 @@ import { connect } from 'react-redux'
 
 import AppView from './appview'
 
-import { updatePrices } from '../actions'
+import { fetchCurrentPrices } from '../actions'
+
+ const cryptoPricesFromFetchData = (crypto, data, currency) => {
+    let res = data['result']['X' + crypto.ticker + 'Z' + currency]
+    return { ...crypto, ask : res['a'][0], bid : res['b'][0], trade : res['c'][0] }
+ }
 
 class App extends React.Component {
     constructor(props) {
@@ -21,29 +26,12 @@ class App extends React.Component {
         clearInterval(this.timerId);
     }
 
-    fetchUrlData(url) {
-        return new Promise((resolve, reject) => {
-            fetch(url)
-                .then( response => response.json())
-                .then( data => resolve(data))
-                .catch( error => reject(error))
-        })
-    }
-
     fetchPricingData() {
-        let { cryptos, currency, updatePricesDisplay } = this.props;
-        let promises = cryptos.map( (crypto, id) => {
+        let { cryptos, currency, getCurrentPrices} = this.props
+        cryptos.forEach((crypto, id) => {
             let url = this.baseUrl + crypto.ticker + currency;
-            return this.fetchUrlData(url)
-                .then( (data) => {
-                    let res = data['result']['X' + crypto.ticker + 'Z' + currency]
-                    res = { ...crypto, ask : res['a'][0], bid : res['b'][0], trade : res['c'][0] }
-                    return res;
-                })
+            getCurrentPrices(url, (data) => cryptoPricesFromFetchData(crypto, data, currency))
         })
-        Promise.all(promises)
-            .then(cryptos => cryptos.forEach((crypto) => updatePricesDisplay(crypto)))
-            .catch(e => console.log(e))
     }
 
     render() {
@@ -52,9 +40,9 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-    cryptos : PropTypes.object.isRequired,
+    cryptos : PropTypes.array.isRequired,
     currency : PropTypes.string.isRequired,
-    updatePricesDisplay : PropTypes.func.isRequired
+    getCurrentPrices : PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -63,7 +51,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapPropsToDispatch = (dispatch) => ({
-    updatePricesDisplay : (crypto) => dispatch(updatePrices(crypto))
+    getCurrentPrices : (url, jsonDataParser) => dispatch(fetchCurrentPrices(url, jsonDataParser))
 })
 
 export default connect(mapStateToProps, mapPropsToDispatch)(App)
