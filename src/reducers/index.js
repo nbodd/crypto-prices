@@ -12,10 +12,8 @@ const currency = (state="USD", action) => {
 
 const cryptos = (state=[], action) => {
     switch (action.type) {
-        case ACTIONS.UPDATE_PRICES:
-            return state.map( (crypto) => {
-                return (crypto.name === action.name) ? {...crypto, ...action} : { ...crypto }
-            })
+        case ACTIONS.UPDATE_PRICE:
+            return state.map( (crypto) => ((crypto.name === action.name) ? {...crypto, ...action} : { ...crypto }))
         default: 
             return state
     }

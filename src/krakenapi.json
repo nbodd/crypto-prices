@@ -14,7 +14,7 @@
                     "trade" : 6.0
                 }, {
                     "name" : "ETHEREUM",
-                    "ticker" : "ETHUSD",
+                    "ticker" : "ETH",
                     "bid" : 4.0,
                     "ask" : 5.0,
                     "trade" : 6.0

@@ -4,7 +4,7 @@ export const ACTIONS = {
     CHANGE_CURRENCY : "CHANGE_CURRENCY",
 }
 
-export const updatePrice = (name, bid, ask, trade) => ({
+export const updatePrices = ({name, bid, ask, trade}) => ({
     type : ACTIONS.UPDATE_PRICE,
     name,
     bid,
@@ -12,7 +12,7 @@ export const updatePrice = (name, bid, ask, trade) => ({
     trade,
 })
 
-export const changeCurrency = (currency) => ({
+export const changeCurrency = ({currency}) => ({
     type : ACTIONS.CHANGE_CURRENCY,
     currency
 })
