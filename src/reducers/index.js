@@ -4,7 +4,7 @@ import { ACTIONS } from '../actions'
 const currency = (state="USD", action) => {
     switch (action.type) {
         case ACTIONS.CHANGE_CURRENCY : 
-            return state
+            return action.currency
         default : 
             return state
     }

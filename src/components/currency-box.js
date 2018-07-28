@@ -23,7 +23,7 @@ const CurrencySelector = ({onCurrencyChange}) => (
             </Grid.Column>
             <Grid.Column>
                 <Dropdown defaultValue="USD" button floating labeled selection options={currencyOptions} 
-                                onChange={ (event, data) => console.log(data.value) }/>
+                                onChange={ (event, data) => onCurrencyChange(data.value) }/>
             </Grid.Column>
         </Grid>
     </Card.Content></Card>

@@ -13,7 +13,7 @@ import { Provider } from 'react-redux'
 import App from './containers/app'
 import initialState from './krakenapi.json'
 
-const loggerMiddleware = createLogger()
+const loggerMiddleware = createLogger()    
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunkMiddleware, loggerMiddleware))
 

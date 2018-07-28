@@ -1,11 +1,10 @@
 import { connect } from 'react-redux'
-import AppView from '../components/appview'
+import CurrencyBox from '../components/currency-box'
+import { changeCurrency } from '../actions'
 
-// const mapStateToProps = (state) => ({
-//     cryptos : state.cryptos,
-//     currency : state.currency
-// })
 
-// const mapPropsToDispatch = (dispatch) => ({
-//     getCurrentPrices : (url, jsonDataParser) => dispatch(fetchCurrentPrices(url, jsonDataParser))
-// })
+const mapPropsToDispatch = (dispatch) => ({
+    onCurrencyChange : (currency) => dispatch(changeCurrency(currency))
+})
+
+export default connect(null, mapPropsToDispatch)(CurrencyBox)
