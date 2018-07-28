@@ -5,12 +5,15 @@ import 'semantic-ui-css/semantic.min.css';
 import '../style.css'
 
 import CryptosList from './cryptos-list'
+import CurrencySelector from './currency-box'
 import PageHeader from './header'
 import PageFooter from './footer'
+
 
 const AppView = ({cryptos}) => (
     <Container className='container'>
         <PageHeader />
+        <CurrencySelector />
         <CryptosList cryptos={cryptos} />
         <br />
         <hr />
