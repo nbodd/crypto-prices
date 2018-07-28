@@ -8,8 +8,6 @@ let currencyOptions = [ {
                             value : "USD"
                         }, {
                             value : "EUR" 
-                        }, {
-                            value : "CAD"
                         }
                       ].map( 
                           option => { option.text = option.value; return option; }

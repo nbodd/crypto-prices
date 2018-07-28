@@ -5,7 +5,6 @@ Fetches prices for popular crypto coins in selected currencies.
 ## Currencies
 * USD
 * EUR
-* CAD
 
 ## Crypto Coins
 * Bitcoin
