@@ -13,7 +13,7 @@ const CryptoBlock = ({currency, name, bid, ask, trade, image_data}) => (
         <Message.Content>
         <Message.Header as="h3">{name}</Message.Header>
         <br />
-        <Image floated='right' size='mini' src={image_data} />
+        <Image floated='left' size='mini' src={image_data} />
         <Grid columns={3} stackable>
             { priceSegment("Bid", currency, bid) }
             { priceSegment("Ask", currency, ask) }
