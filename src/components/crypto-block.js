@@ -1,18 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Grid, Image, Message } from 'semantic-ui-react'
+import { Grid, Image, Message, Header } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
 import '../style.css'
+
+const priceSegment = (text, currency, price) => (
+    <Grid.Column><Header as="h4">{text} </Header>{currency} {(price) ? price : "---"}</Grid.Column>
+)
 
 const CryptoBlock = ({currency, name, bid, ask, trade, image_data}) => (
     <Message className='crypto-block'>
         <Message.Content>
-        <Message.Header>{name}</Message.Header>
+        <Message.Header as="h3">{name}</Message.Header>
+        <br />
         <Image floated='right' size='mini' src={image_data} />
         <Grid columns={3} stackable>
-            <Grid.Column>Bid: {currency} {(bid) ? bid : "---"}</Grid.Column>
-            <Grid.Column>Ask: {currency} {(ask) ? ask : "---"}</Grid.Column>
-            <Grid.Column>Trade: {currency} {(trade) ? trade : "---"}</Grid.Column>
+            { priceSegment("Bid", currency, bid) }
+            { priceSegment("Ask", currency, ask) }
+            { priceSegment("Trade", currency, trade) }
         </Grid>
         </Message.Content>
     </Message>
