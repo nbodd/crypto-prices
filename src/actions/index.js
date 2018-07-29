@@ -19,7 +19,7 @@ export const changeCurrency = (currency) => ({
 
 export function fetchCurrentPrices(url, parseJsonForLatestPrices) {
     return function(dispatch) {
-        console.log("URL Fetch : %s", url)
+        // console.log("URL Fetch : %s", url)
         return fetch(url)
             .then(response => response.json(), error => console.log(error))
             .then(data => parseJsonForLatestPrices(data))

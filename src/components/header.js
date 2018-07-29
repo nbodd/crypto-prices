@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 import '../style.css'
 
 const PageHeader = () => (
-        <Message color='olive' size='huge' className='page-header'>
+        <Message>
             <Header as='h1'>Crypto Currencies</Header><br /><br />
             <Header as='h2'>Monitor Live Prices</Header>
         </Message>

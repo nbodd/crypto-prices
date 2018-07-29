@@ -16,12 +16,12 @@ const getImageData = name => {
     return ""
 }
 
-const appendImageData = (cryptos) => (
-    cryptos.map((crypto) => ({...crypto, image_data : getImageData(crypto.name)}))
+const appendImageDataAndCurrency = (state) => (
+    state.cryptos.map((crypto) => ({...crypto, currency : state.currency, image_data : getImageData(crypto.name)}))
 )
 
 const mapStateToProps = (state) => ({
-    cryptos : appendImageData(state.cryptos)
+    cryptos : appendImageDataAndCurrency(state)
 })
 
 export default connect(mapStateToProps)(AppView)
