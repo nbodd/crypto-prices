@@ -5,9 +5,11 @@ import 'semantic-ui-css/semantic.min.css';
 import '../style.css'
 
 let currencyOptions = [ {
-                            value : "USD"
+                            value : "USD",
+                            icon : 'dollar'
                         }, {
-                            value : "EUR" 
+                            value : "EUR",
+                            icon : 'euro'
                         }
                       ].map( 
                           option => { option.text = option.value; return option; }
@@ -20,8 +22,9 @@ const CurrencySelector = ({onCurrencyChange}) => (
                 <Header as="h2">Currency</Header>
             </Grid.Row>
             <Grid.Row>
-                <Dropdown defaultValue="USD" button floating labeled selection options={currencyOptions} 
-                                onChange={ (event, data) => onCurrencyChange(data.value) }/>
+                <Dropdown defaultValue='USD' selection labeled floating options={currencyOptions}
+                            onChange={ (event, data) => onCurrencyChange(data.value) }>
+                </Dropdown>
             </Grid.Row>
         </Grid>
     </Message.Content></Message>

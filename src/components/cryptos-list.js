@@ -9,7 +9,7 @@ import CryptoBlock from './crypto-block'
 const CryptosList = ({cryptos}) => (
     
     <Grid stretched centered>
-        {cryptos.map((crypto, id) => <Grid.Row key={id} stretched><CryptoBlock {...crypto} /></Grid.Row>)}
+        {cryptos.map((crypto, id) => <Grid.Row key={id} stretched textAlign='left'><CryptoBlock {...crypto} /></Grid.Row>)}
     </Grid>
 
 )
