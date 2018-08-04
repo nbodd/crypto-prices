@@ -9,21 +9,19 @@ const priceSegment = (text, currency, price) => {
     if (currency === "EUR")
         icon = <Icon name='euro' />
 
-    return <Grid.Column><Header as="h4">{text} </Header>{icon} {(price) ? price : "---"}</Grid.Column>
+    return <Grid.Column><Header as="h4">{text} </Header>{icon} {(price) ? Number(price).toFixed(2) : <Icon name="spinner" />}</Grid.Column>
 }
 
 class CryptoBlock extends React.Component {
     constructor(props) {
         super(props);
-        
         this.currency = this.props.currency
     }
 
     render() {
         let {name, bid, ask, trade, image_data} = this.props
 
-        if (this.props.currency !== this.currency)
-        {   
+        if (this.props.currency !== this.currency) {   
             // invalidate until next render
             bid = ask = trade = null
             this.currency = this.props.currency
