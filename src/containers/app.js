@@ -19,6 +19,10 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        // fetch ASAP
+        this.fetchPricingData();
+        
+        // set interval after
         this.timerId = setInterval(() => this.fetchPricingData(), 5000);
     }
 
